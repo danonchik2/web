@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin:0;
+            margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
@@ -26,10 +26,10 @@
             align-items: center;
         }
 
-        header img {
-            height: 50px;
-            margin-right: 20px;
-        }
+            header img {
+                height: 50px;
+                margin-right: 20px;
+            }
 
         .container {
             display: flex;
@@ -51,17 +51,17 @@
             text-align: left;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-        }
+            .form-group label {
+                display: block;
+                margin-bottom: 10px;
+            }
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-        }
+            .form-group input,
+            .form-group select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+            }
 
         button {
             background-color: #007bff;
@@ -73,10 +73,9 @@
             font-size: 16px;
         }
 
-        button:hover {
-            background-color: #0056b3;
-        }
-
+            button:hover {
+                background-color: #0056b3;
+            }
     </style>
 </head>
 <body>
@@ -89,12 +88,12 @@
             <h2>Форма реєстрації</h2>
             <form id="registrationForm">
                 <div class="form-group">
-                    <label for="name">Ім'я:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
                     <label for="gender">Стать:</label>
