@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації та входу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        header, footer {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            width: 45%;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .profile-container {
+            display: none;
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+            flex-direction: column;
+            font-size: 30px;
+        }
+
+        .profile-menu a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .profile-menu a:hover {
+        text-decoration: underline;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #poll-section {
+            display: none;
+            background-color: #fff;
+            width: 50%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            background-color: #e67103;
+        }
+
+        .back-button:hover {
+            background-color: #ebf312;
+        }
+
+        #about-section {
+            display: none;
+            padding: 100px;
+            height: 100vh;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 55%;
+            text-align: justify;
+            justify-content: center;
+        }
+
+        #created-poll {
+            margin-top: 20px;
+        }
+
+        #created-options {
+            list-style: none;
+            padding: 0;
+        }
+
+        #created-options li {
+            padding: 10px;
+            border: 1px solid #4742db;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="llllll.png" alt="Логотип" class="logo">
+        <h1>Мій Додаток</h1>
+    </header>
+
+    <div id="form-section" class="container">
+        <div class="form-container">
+            <h2>Форма реєстрації</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Стать:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Чоловіча</option>
+                        <option value="female">Жіноча</option>
+                        <option value="other">Інша</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Дата народження:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </div>
+        <div class="form-container">
+            <h2>Вхід до сайту</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="profile" class="profile-container">
+        <h2>Профіль користувача</h2>
+        <ul class="profile-menu">
+            <li><a href="#" id="home-link">Головна</a></li>
+            <li><a href="#" id="about-link">Про додаток</a></li>
+        </ul>
+    </div>
+
+    <div id="poll-section" class="container">
+        <div class="form-container">
+            <h2>Опитування</h2>
+            <form id="pollForm">
+                <div class="form-group">
+                    <label for="question">Запитання:</label>
+                    <input type="text" id="question" name="question" required>
+                </div>
+                <div class="form-group">
+                    <label for="option1">Варіант відповіді 1:</label>
+                    <input type="text" id="option1" name="option1" required>
+                </div>
+                <div class="form-group">
+                    <label for="option2">Варіант відповіді 2:</label>
+                    <input type="text" id="option2" name="option2" required>
+                </div>
+                <button type="submit">Створити опитування</button>
+            </form>
+            <button class="back-button" id="back-button">Назад</button>
+        </div>
+        <div id="created-poll">
+            <p id="poll-question"></p>
+            <ul id="created-options"></ul>
+        </div>
+    </div>
+
+    <div id="about-section" class="container">
+        <div class="form-container">
+            <h2>Про додаток</h2>
+            <p>Ідея додатку: реалізація можливості створення опитування у вигляді запитання та варіантів відповідей на нього</p>
+            <button class="back-button" id="back-to-profile">Назад</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showProfile();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showProfile();
+        });
+
+        function showProfile() {
+            document.getElementById('form-section').style.display = 'none';
+            document.getElementById('profile').style.display = 'flex';
+            document.getElementById('poll-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+        }
+
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            showPollSection();
+        });
+
+        document.getElementById('about-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            showAboutSection();
+        });
+
+        document.getElementById('back-button').addEventListener('click', function() {
+            showProfile();
+        });
+
+        document.getElementById('back-to-profile').addEventListener('click', function() {
+            showProfile();
+        });
+
+        function showPollSection() {
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('poll-section').style.display = 'flex';
+            document.getElementById('about-section').style.display = 'none';
+        }
+
+        function showAboutSection() {
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('poll-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'flex';
+        }
+
+        document.getElementById('pollForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const question = document.getElementById('question').value;
+            const option1 = document.getElementById('option1').value;
+            const option2 = document.getElementById('option2').value;
+
+            const pollBlock = document.createElement('div');
+            pollBlock.className = 'form-container';
+            pollBlock.innerHTML = `
+                <h2>${question}</h2>
+                <button class="poll-option">${option1}</button>
+                <button class="poll-option">${option2}</button>
+            `;
+
+            document.getElementById('poll-section').appendChild(pollBlock);
+
+            document.querySelectorAll('.poll-option').forEach((button) => {
+                button.addEventListener('click', function() {
+                    alert(`Ви обрали варіант: ${button.textContent}`);
+                    pollBlock.remove();
+                });
+            });
+
+            document.getElementById('pollForm').reset();
+        });
+    </script>
+    <footer>
+        &copy; 2024 Ваша компанія. Усі права захищені.
+    </footer>
+</body>
+</html>
+
+
